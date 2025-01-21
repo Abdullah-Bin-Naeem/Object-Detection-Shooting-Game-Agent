@@ -9,7 +9,6 @@ This repository contains the code for creating an object detection-based shootin
 - **Custom Classification**: Classified detected persons as "allies" or "enemies" based on training data.
 - **Dataset Preparation**: Automated data preparation by extracting person detections from video files and labeling them based on the folder name.
 - **Inference**: Real-time classification and gameplay decision-making using the trained YOLOv11 model.
-- **Output Visualization**: Results, including detection and classification, are saved in the `output` folder.
 
 ---
 
@@ -17,20 +16,8 @@ This repository contains the code for creating an object detection-based shootin
 ```
 object_detection_game_agent/
 │
-├── data/                # Dataset folder
-│   ├── allies/          # Videos of allies
-│   ├── enemies/         # Videos of enemies
-│
-├── yolov11/             # YOLOv11 files and configurations
-│   ├── annotations/     # Labeled data in YOLOv11 format
-│   ├── weights/         # YOLOv11 trained weights
-│
 ├── notebooks/           # Jupyter notebook for the entire pipeline
 │   ├── object_detection_agent.ipynb
-│
-├── output/              # Inference results
-│   ├── ally_detections/ # Detected allies
-│   ├── enemy_detections/# Detected enemies
 │
 ├── README.md            # Documentation
 ```
@@ -40,9 +27,9 @@ object_detection_game_agent/
 ## Steps to Reproduce
 
 ### 1. **Dataset Preparation**
-- Place videos of **allies** in the `data/allies` folder.
-- Place videos of **enemies** in the `data/enemies` folder.
-- The notebook extracts frames, detects persons, and assigns labels based on the folder name.
+- Place videos of **allies** in a folder named `allies`.
+- Place videos of **enemies** in a folder named `enemies`.
+- Use the notebook to extract frames, detect persons, and assign labels based on the folder name.
 
 ### 2. **Model Training**
 - The notebook prepares the labeled data in YOLOv11 format.
@@ -51,15 +38,11 @@ object_detection_game_agent/
 ### 3. **Inference**
 - Use the trained YOLOv11 model for real-time inference.
 - Detect and classify persons in new video inputs.
-- Results are stored in the `output` folder.
 
 ---
 
 ## Requirements
 Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
 
 ### Major Dependencies:
 - Python 3.8+
@@ -77,10 +60,7 @@ git clone https://github.com/yourusername/object_detection_game_agent.git
 cd object_detection_game_agent
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+2. Install dependencies
 
 3. Open the notebook:
 ```bash
@@ -94,9 +74,9 @@ jupyter notebook notebooks/object_detection_agent.ipynb
 
 ---
 
-## Results
-- Inference outputs, including bounding boxes and classifications, are stored in the `output` folder.
-- Visualizations for allies and enemies detections are saved separately.
+## Notes
+- The dataset and output folder are not included in this repository. You must provide your own dataset and specify the output directory within the notebook.
+- Ensure that the dataset is arranged as described for smooth processing.
 
 ---
 
