@@ -3,6 +3,7 @@
 This repository contains the code for creating an object detection-based shooting game agent using YOLOv11. The agent detects and classifies objects as **allies** or **enemies** based on labeled training data. The implementation includes data preparation, model training, and inference for real-time gameplay scenarios.
 
 ---
+Youtube demo : https://youtu.be/lY9RaePi-2Y
 
 ## Features
 - **YOLOv11 Detection**: Leveraged YOLOv11 for robust person detection.
